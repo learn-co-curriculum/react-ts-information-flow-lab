@@ -1,10 +1,18 @@
 import React, { useState } from "react";
 import Item from "./Item";
 
-function ShoppingList({ items }) {
+interface Props {
+  items: {
+    id: number;
+    name: string;
+    category: string;
+  }[];
+}
+
+function ShoppingList({ items }: Props) {
   const [selectedCategory, setSelectedCategory] = useState("All");
 
-  function handleCategoryChange(event) {
+  function handleCategoryChange(event: React.ChangeEvent<HTMLSelectElement>) {
     setSelectedCategory(event.target.value);
   }
 
