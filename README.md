@@ -36,8 +36,10 @@ Your goal is to refactor the code from the previous shopping list lab to match
 the component structure in the image above. As you work on refactoring the code,
 keep in mind:
 
-- Which components should hold **state**? Which components need access to that state?
+- Which components should hold **state**? Which components need access to that
+  state?
 - How can we update state in one component from a child component?
+- What things need to be explicitly typed?
 
 Also, remember what we learned in the previous lesson:
 
