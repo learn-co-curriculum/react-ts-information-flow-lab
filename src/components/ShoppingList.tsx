@@ -1,10 +1,18 @@
 import React, { useState } from "react";
 import Item from "./Item";
 
-function ShoppingList({ items }) {
+interface Props {
+  items: {
+    id: number;
+    name: string;
+    category: string;
+  }[];
+}
+
+function ShoppingList({ items }: Props) {
   const [selectedCategory, setSelectedCategory] = useState("All");
 
-  function handleCategoryChange(event) {
+  function onCategoryChange(event: React.ChangeEvent<HTMLSelectElement>) {
     setSelectedCategory(event.target.value);
   }
 
@@ -17,7 +25,7 @@ function ShoppingList({ items }) {
   return (
     <div className="ShoppingList">
       <div className="Filter">
-        <select name="filter" onChange={handleCategoryChange}>
+        <select name="filter" onChange={onCategoryChange}>
           <option value="All">Filter by category</option>
           <option value="Produce">Produce</option>
           <option value="Dairy">Dairy</option>
